@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Collection Simulation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="os.css"> <!-- Updated from styles.css -->
+</head>
+<body>
+    <div class="container">
+        <h1>Garbage Collection <span>Visualizer</span></h1>
+        <div class="charts-container">
+            <div class="chart-container">
+                <h3>Memory Usage Over Time</h3>
+                <canvas id="memoryChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Resource Allocation</h3>
+                <canvas id="allocationChart"></canvas>
+            </div>
+        </div>
+        <div>
+            <div class="controls">
+                <button id="resetBtn" class="btn reset">Reset</button>
+                <button id="allocateBtn" class="btn allocate">Allocate</button>
+                <button id="collectBtn" class="btn collect">Collect</button>
+            </div>
+            <div class="memory-usage">
+                <h3>Memory Usage</h3>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <span id="usage">139 / 300 MB</span>
+            </div>
+            <div class="memory-blocks">
+                <div class="block">
+                    <p>document4.txt <span class="status">Referenced</span></p>
+                    <p>Size: 30 MB</p>
+                </div>
+                <div class="block">
+                    <p>image5.jpg <span class="status">Referenced</span></p>
+                    <p>Size: 20 MB</p>
+                </div>
+                <div class="block">
+                    <p>video7.mp4 <span class="status">Referenced</span></p>
+                    <p>Size: 36 MB</p>
+                </div>
+                <div class="block">
+                    <p>script11.js <span class="status">Referenced</span></p>
+                    <p>Size: 53 MB</p>
+                </div>
+            </div>
+            <div class="deleted-memory">
+                <h3>Deleted Memory Blocks</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Block ID</th>
+                            <th>Size</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deletedTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="os.js"></script> <!-- Updated from script.js -->
+</body>
+</html>
+
+
